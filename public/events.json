@@ -1,0 +1,45 @@
+[
+    {
+        "name": "Education Wokrshop and Webinar",
+        "img": "https://i.ibb.co/TTF0JYn/istockphoto-1353769234-612x612.jpg",
+        "price": 29.99,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "button": "Add to Cart"
+      },
+      {
+        "name": "Career Fair and Festivel",
+        "img": "https://i.ibb.co/5FdCgz9/180222-career-fair-5709-1064-600x400.jpg",
+        "price": 39.99,
+        "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "button": "Buy Now"
+      },
+      {
+        "name": "The biggest Educational conferenc",
+        "img": "https://i.ibb.co/WG6CHvQ/education-conferences-apbs.jpg",
+        "price": 49.99,
+        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        "button": "Add to Wishlist"
+      },
+      {
+        "name": "Educational trainning",
+        "img": "https://i.ibb.co/p2j8Zd7/tz-education-1.jpg",
+        "price": 59.99,
+        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+        "button": "View Details"
+      },
+      {
+        "name": "The biggest educatinal conferecc",
+        "img": "https://i.ibb.co/1Kk7ndR/samuel-pereira-uf2nn-ANWa8-Q-unsplash-min-scaled.jpg",
+        "price": 69.99,
+        "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.",
+        "button": "Add to Cart"
+      },
+      {
+        "name": "The biggest educational trainning",
+        "img": "https://i.ibb.co/W2d4BXF/istockphoto-1132124550-612x612.jpg",
+        "price": 79.99,
+        "description": "Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
+        "button": "Buy Now"
+      }
+
+]
