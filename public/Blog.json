@@ -1,0 +1,49 @@
+[
+    {
+        "name": "John Doe",
+        "img": "john_doe.jpg",
+        "title": "Software Engineer",
+        "description": "Passionate about creating innovative solutions to complex problems.",
+        "facebook": "https://www.facebook.com/johndoe",
+        "linkedin": "https://www.linkedin.com/in/johndoe",
+        "twitter": "https://twitter.com/johndoe"
+      },
+    
+      {
+        "name": "Jane Smith",
+        "img": "jane_smith.jpg",
+        "title": "Marketing Specialist",
+        "description": "Experienced in digital marketing and brand development.",
+        "facebook": "https://www.facebook.com/janesmith",
+        "linkedin": "https://www.linkedin.com/in/janesmith",
+        "twitter": "https://twitter.com/janesmith"
+      },
+     
+      {
+        "name": "Alex Rodriguez",
+        "img": "alex_rodriguez.jpg",
+        "title": "Data Scientist",
+        "description": "Analyzing data to derive valuable insights and drive decision-making.",
+        "facebook": "https://www.facebook.com/alexrodriguez",
+        "linkedin": "https://www.linkedin.com/in/alexrodriguez",
+        "twitter": "https://twitter.com/alexrodriguez"
+      },
+      
+      {
+        "name": "Emily Chang",
+        "img": "emily_chang.jpg",
+        "title": "Graphic Designer",
+        "description": "Bringing ideas to life through creative and visually appealing designs.",
+        "facebook": "https://www.facebook.com/emilychang",
+        "linkedin": "https://www.linkedin.com/in/emilychang",
+        "twitter": "https://twitter.com/emilychang"
+      }
+    ]
+     
+      
+      
+      
+      
+      
+       
+]

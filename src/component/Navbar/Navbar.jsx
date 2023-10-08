@@ -21,7 +21,9 @@ const Navbar = () => {
             {navs}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="   text-xl">
+            <img className='w-3/4' src='https://i.ibb.co/4m6XjJV/education-open-book-company-logo-vector-20001689.jpg'/>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-8 px-1">
