@@ -14,7 +14,7 @@ const EduCard = ({cours}) => {
   </div>
   <div className="p-6">
     <div className="mb-2 flex items-center justify-between">
-      <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+      <p className="block font-sans text-md text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
         {name}
       </p>
       <p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">

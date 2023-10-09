@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const {googleSignIn} = useContext(AuthContext)
@@ -12,6 +13,7 @@ const Login = () => {
         googleSignIn(email,password)
         .then(result => {
             console.log(result.user);
+            e.target.reset();
            
         })
         .catch(error =>{
@@ -22,12 +24,15 @@ const Login = () => {
     return (
         <div className="hero min-h-screen my-12 bg-gray-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
+          <div className="text-center l">
+            
             {/* <h1 className="text-5xl font-bold">Login now!</h1> */}
             {/* <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p> */}
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handleGoogle} className="card-body">
+          <h2 className='text-3xl font-medium text-center mt-4'>Login Now </h2>
+            
+            <form onSubmit={handleGoogle} className="card-body ">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -51,6 +56,7 @@ const Login = () => {
 
               </div>
             </form>
+            <p className='text-center'>Do not have an account <Link to="/register"><span className='text-center font-bold'>Register</span></Link></p>
           </div>
         </div>
       </div>

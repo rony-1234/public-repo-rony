@@ -9,6 +9,7 @@ import EventDetail from "../EventDetail/EventDetail";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Events from "../Events/Events";
 import Courses from "../Courses/Courses";
+import Commentor from "../Commentor/Commentor";
 
 const mycreateRouter = createBrowserRouter([
     {
@@ -46,6 +47,11 @@ const mycreateRouter = createBrowserRouter([
             path:'/eventdetail',
             element:<EventDetail></EventDetail>,
             loader:() =>(fetch('/events.json'))
+        },
+        {
+          path:'/commentor',
+          element:<Commentor></Commentor>,
+          loader:() =>(fetch),
         }
 
       ]

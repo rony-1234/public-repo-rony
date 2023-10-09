@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import Courses from "../Courses/Courses";
 import Blog from "../Blog/Blog";
 import Events from "../Events/Events";
+import Commentor from "../Commentor/Commentor";
 
 
 const Home = () => {
@@ -13,7 +14,8 @@ const Home = () => {
             <Banner></Banner>
             <Courses course={course}></Courses>
             <Events></Events>
-            <Blog></Blog>
+            <Commentor></Commentor>
+            {/* <Blog></Blog> */}
         </div>
     );
 };
