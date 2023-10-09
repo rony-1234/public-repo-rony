@@ -1,17 +1,35 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Navbar = () => {
+   const {user,logOut} = useContext(AuthContext)
+
+   const handleLogOut = () =>{
+    logOut()
+    .then(() =>{
+      console.log('user log out successfully')
+    })
+    .catch(error =>{
+      console.error(error)
+    })
+    
+   }
+
     const navs = <>
     <NavLink to='/' className={({isActive,isPending}) =>
-     isPending ? 'pending' : isActive ? "text-green-600" : ""}>Home</NavLink>
+     isPending ? 'pending' : isActive ? "text-blue-700" : ""}>Home</NavLink>
     <NavLink to='/about' className={({isActive,isPending}) =>
-     isPending ? 'pending' : isActive ? "text-green-600" : ""}>Events</NavLink>
+     isPending ? 'pending' : isActive ? "text-blue-700" : ""}>Events</NavLink>
     <NavLink to='/feature' className={({isActive,isPending}) =>
-     isPending ? 'pending' : isActive ? "text-green-600" : ""}>Course</NavLink>
+     isPending ? 'pending' : isActive ? "text-blue-700" : ""}>Course</NavLink>
+    <NavLink to='/login' className={({isActive,isPending}) =>
+     isPending ? 'pending' : isActive ? "text-blue-700" : ""}>Login</NavLink>
+    <NavLink to='/register' className={({isActive,isPending}) =>
+     isPending ? 'pending' : isActive ? "text-blue-700" : ""}>Register</NavLink>
    </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-[#2c3e50] text-white text-xl">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -21,9 +39,9 @@ const Navbar = () => {
             {navs}
             </ul>
           </div>
-          <a className="   text-xl">
-            <img className='w-3/4' src='https://i.ibb.co/4m6XjJV/education-open-book-company-logo-vector-20001689.jpg'/>
-          </a>
+          <a className="text-xl">
+            <img className='w-36' src='https://i.ibb.co/wsKtzTk/mceclip0.png'/>
+        </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-8 px-1">
@@ -31,9 +49,21 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Login</a>
+          {
+            user ? <>
+                   <span>{user.email}</span>
+                   <a onClick={handleLogOut } className="btn">Sign Out</a>
+            </>
+            
+            : <Link to="/login">
+               <button className="btn btn-button">Login</button>
+            </Link>
+          
+          }
+         
         </div>
       </div>
+    
     );
 };
 
