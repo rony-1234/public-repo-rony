@@ -1,8 +1,11 @@
-# React + Vite
+# Educare - Event
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+* This Educare-Event website has big organize Education event, tech, conferenc, and magazine.
 
-Currently, two official plugins are available:
+* This website many card added service section for the added event show.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* First of all the website biggest educational trainning , confrence and second of all the innovative and login and register form fulfill news then 
+include info and third of all  the website organzine beautiful website .
+
+
+
