@@ -1,16 +1,20 @@
 import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const {googleSignIn} = useContext(AuthContext)
+    const {googleSignin} = useContext(AuthContext)
+    const {createUser} = useContext(AuthContext)
 
     const handleGoogle = e => {
         e.preventDefault();
-        const email = e.target.email.value ;
-        const password = e.target.password.value ;
+        const form = e.target;
+        const email = form.email.value ;
+        const password = form.password.value ;
         console.log(email, password)
-        googleSignIn(email,password)
+
+        createUser(email,password)
         .then(result => {
             console.log(result.user);
             e.target.reset();
@@ -19,6 +23,18 @@ const Login = () => {
         .catch(error =>{
             console.error(error)
         })
+
+       
+    }
+    const handleGoogleLogin = () =>{
+      googleSignin(GoogleAuthProvider)
+      .then(res =>{
+        res.user
+
+      } )
+      .catch(error =>{
+        console.error(error)
+      })
     }
 
     return (
@@ -52,7 +68,7 @@ const Login = () => {
                 <button  className="btn btn-primary">Login</button>
               </div>
               <div className='login-btn'>
-                <button>Google</button>
+                <button type='button' onClick={handleGoogleLogin}>Google</button>
 
               </div>
             </form>

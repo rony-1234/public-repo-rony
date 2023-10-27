@@ -7,8 +7,9 @@ const Navbar = () => {
 
    const handleLogOut = () =>{
     logOut()
-    .then(() =>{
-      console.log('user log out successfully')
+    .then(res =>{
+      console.log(res.user)
+      
     })
     .catch(error =>{
       console.error(error)
@@ -20,9 +21,9 @@ const Navbar = () => {
     <NavLink to='/' className={({isActive,isPending}) =>
      isPending ? 'pending' : isActive ? "text-blue-700" : ""}>Home</NavLink>
     <NavLink to='/about' className={({isActive,isPending}) =>
-     isPending ? 'pending' : isActive ? "text-blue-700" : ""}>Events</NavLink>
+     isPending ? 'pending' : isActive ? "text-blue-700" : ""}>About</NavLink>
     <NavLink to='/feature' className={({isActive,isPending}) =>
-     isPending ? 'pending' : isActive ? "text-blue-700" : ""}>Course</NavLink>
+     isPending ? 'pending' : isActive ? "text-blue-700" : ""}>Feature</NavLink>
     <NavLink to='/login' className={({isActive,isPending}) =>
      isPending ? 'pending' : isActive ? "text-blue-700" : ""}>Login</NavLink>
     <NavLink to='/register' className={({isActive,isPending}) =>
@@ -50,13 +51,15 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {
-            user ? <>
-                   <span>{user.photoURL}</span>
-                   <a href='#' onClick={handleLogOut} className="btn">Sign Out</a>
-            </>
+            user ? <div className='flex'>
+              <div>
+              <img src={user.photoURL} /></div>
+                   
+                   <button onClick={handleLogOut} className="btn">Sign Out</button>
+            </div>
             
             : <Link to="/login">
-               <button className="btn btn-button">Login</button>
+               <button  className="btn btn-button">Login</button>
             </Link>
           
           }

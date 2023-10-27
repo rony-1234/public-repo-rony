@@ -1,25 +1,28 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const Register = () => {
 
 
-    const {signUp,updateUser} = useContext(AuthContext);
+    const { SignIn} = useContext(AuthContext);
   
 
     const handleRegister = e =>{
         e.preventDefault();
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        console.log(name, email, password,photoURL )
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photo = form.photo.value;
+        console.log(name, email, password,photo )
 
-        signUp(email,password)
+        SignIn (email,password)
         .then(result =>{ 
             console.log(result.user)
-            updateUser(name,photoURL)
-            .then(result => console.log(result.user.photoURL))
+            // updateUser(name,)
+            // .then(result => console.log(result.user.photoURL))
         })
         .catch(error =>{
             console.error(error)
@@ -29,14 +32,14 @@ const Register = () => {
 
 
 
-        if(!/^[a-z0-9]{6,}$/.test(password)){
-        setError('minimum six character do not use special and capital letter')
-        }
+        // if(!/^[a-z0-9]{6,}$/.test(password)){
+        // setError('minimum six character do not use special and capital letter')
+        // }
     }
 
     
     return (
-        <div className=" flex items-center justify-center  bg-[#f18dc6] py-12">
+        <div className=" flex items-center justify-center  py-12">
         <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
   <h4 className="block font-sans text-center text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
     Register Now 
@@ -157,12 +160,12 @@ const Register = () => {
     </button>
     <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
       Already have an account?
-      <a
+      <Link to='/login'
         className="font-medium text-pink-500 transition-colors hover:text-blue-700"
-        href="#"
+        
       >
         Sign In
-      </a>
+      </Link>
     </p>
   </form>
 

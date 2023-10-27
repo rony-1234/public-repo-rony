@@ -10,6 +10,8 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Events from "../Events/Events";
 import Courses from "../Courses/Courses";
 import Commentor from "../Commentor/Commentor";
+import About from "../About/About";
+import Feature from "../Feature/Feature";
 
 const mycreateRouter = createBrowserRouter([
     {
@@ -35,8 +37,12 @@ const mycreateRouter = createBrowserRouter([
             element:<Register></Register>
         },
         {
-            path:'/event',
-            element:<PrivateRoute><Events></Events></PrivateRoute>
+            path:'/about',
+            element:<PrivateRoute><About></About></PrivateRoute>
+        },
+        {
+            path:'/feature',
+            element:<PrivateRoute><Feature></Feature></PrivateRoute>
         },
         {
             path:'/course',
