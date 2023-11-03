@@ -1,4 +1,4 @@
-# Educare - Event
+# Educare
 
 * This Educare-Event website has big organize Education event, tech, conferenc, and magazine.
 

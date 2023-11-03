@@ -12,7 +12,7 @@ const Navbar = () => {
       
     })
     .catch(error =>{
-      console.error(error)
+      console.error(error, 'error')
     })
     
    }
@@ -40,8 +40,9 @@ const Navbar = () => {
             {navs}
             </ul>
           </div>
-          <a className="text-xl">
+          <a className="text-xl flex items-center">
             <img className='w-36' src='https://i.ibb.co/wsKtzTk/mceclip0.png'/>
+            <h4 className='text-4xl font-bold'>Edu<span className='text-orange-700'>Care</span></h4>
         </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -53,12 +54,12 @@ const Navbar = () => {
           {
             user ? <div className='flex'>
               <div>
-              <img src={user.photoURL} /></div>
+              <img className='w-12 h-12 rounded-full' src={user.photoURL} /></div>
                    
                    <button onClick={handleLogOut} className="btn">Sign Out</button>
             </div>
             
-            : <Link to="/login">
+            : <Link to="/register">
                <button  className="btn btn-button">Login</button>
             </Link>
           

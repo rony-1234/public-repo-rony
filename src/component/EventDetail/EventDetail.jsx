@@ -4,19 +4,21 @@ import EventDetailCard from './EventDetailCard';
 
 const EventDetail = () => {
     const [event, setEvent] = useState();
-    const {name}  = useParams();
+   
 
     const events = useLoaderData();
+    const {name} = useParams();
+    const nameStr = name;
     // console.log(events)
 
     useEffect(()=>{
         const findEvents = events?.find((event) => event.name === name)
         setEvent(findEvents)
-    },[name,events])
+    },[events])
 
 
     return (
-        <div>
+        <div className='my-12 flex mx-auto justify-center'>
             <EventDetailCard event={event}></EventDetailCard>
         </div>
     );

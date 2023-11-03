@@ -1,11 +1,14 @@
 import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     const {googleSignin} = useContext(AuthContext)
-    const {createUser} = useContext(AuthContext)
+    const {SignIn} = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation();
+    console.log(location)
 
     const handleGoogle = e => {
         e.preventDefault();
@@ -14,18 +17,19 @@ const Login = () => {
         const password = form.password.value ;
         console.log(email, password)
 
-        createUser(email,password)
+        SignIn(email,password)
         .then(result => {
             console.log(result.user);
             e.target.reset();
-           
-        })
+            navigate(location?.state ? location.state : '/');
+           })
         .catch(error =>{
             console.error(error)
         })
 
        
-    }
+    } 
+    
     const handleGoogleLogin = () =>{
       googleSignin(GoogleAuthProvider)
       .then(res =>{
@@ -33,7 +37,7 @@ const Login = () => {
 
       } )
       .catch(error =>{
-        console.error(error)
+        console.error(error, 'The invalid message')
       })
     }
 

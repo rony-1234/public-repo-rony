@@ -50,8 +50,8 @@ const mycreateRouter = createBrowserRouter([
         },
 
         {
-            path:'/eventdetail',
-            element:<EventDetail></EventDetail>,
+            path:'/eventdetail/:name',
+            element:<PrivateRoute><EventDetail></EventDetail></PrivateRoute>,
             loader:() =>(fetch('/events.json'))
         },
         {
