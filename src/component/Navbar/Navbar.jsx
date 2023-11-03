@@ -54,7 +54,8 @@ const Navbar = () => {
           {
             user ? <div className='flex'>
               <div>
-              <img className='w-12 h-12 rounded-full' src={user.photoURL} /></div>
+              <img className='w-12 h-12 rounded-full' src={user.photoURL} />
+                <span>{user.name}</span></div>
                    
                    <button onClick={handleLogOut} className="btn">Sign Out</button>
             </div>

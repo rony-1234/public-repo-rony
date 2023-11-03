@@ -3,6 +3,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
 import { FaEye,FaEyeSlash } from 'react-icons/fa';
 import Swal from "sweetalert2";
+import { sendEmailVerification, updateProfile } from "firebase/auth";
 
 const Register = () => {
 
@@ -22,13 +23,17 @@ const Register = () => {
         const password = form.password.value;
         const photo = form.photo.value;
         console.log(name, email, password,photo )
+
+        // reset success and error
+        SetSuccess('');
+        setRegisterError('')
             
         if(!/[0-9a-zA-Z]{6,}/.test(password)){
           Swal.fire({
             title: 'Error!',
             text: 'minimum six character do not use special and capital letter',
             icon: 'error',
-            confirmButtonText: 'Cool'
+            confirmButtonText: 'Error'
           })
            return;
           
@@ -36,8 +41,36 @@ const Register = () => {
         createUser(email,password)
         .then(result =>{ 
             console.log(result.user)
-            // updateUser(name,)
-            // .then(result => console.log(result.user.photoURL))
+            // update profile
+
+            updateProfile(result.user,{
+              displayName:name,
+              photoURL:photo
+            })
+            .then(() =>console.log('profile updated')
+            )
+            .catch()
+
+          if(result.user.emailVerified){
+              SetSuccess(
+                Swal.fire(
+                  'Great',
+                  'User Created Succesfully',
+                  'success'
+                )
+              )
+            }else{
+              setRegisterError()
+            }
+
+            sendEmailVerification(result.user)
+            .then(() =>{
+              // alert('please check your email')
+            })
+            
+
+            
+           
         })
         .catch(error =>{
             console.log(error,'error')
