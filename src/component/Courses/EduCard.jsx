@@ -21,7 +21,7 @@ const EduCard = ({cours}) => {
         ${price}
       </p>
     </div>
-    <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased opacity-75">
+    <p className="block font-sans text-sm leading-normaltext-blue-gray-900 antialiased opacity-80">
       {description}
     </p>
   </div>
